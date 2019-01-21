@@ -119,7 +119,9 @@ public class MultiSpinner extends AppCompatSpinner implements OnCancelListener {
         if (adapter != null)
             adapter.notifyDataSetChanged();
 
-        listener.onItemsSelected(items);
+        if (listener != null) {
+            listener.onItemsSelected(items);
+        }
     }
 
     @Override
