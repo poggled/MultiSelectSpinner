@@ -6,6 +6,8 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.androidbuts.multispinnerfilter.KeyPairBoolData;
+import com.androidbuts.multispinnerfilter.MultiSpinner;
+import com.androidbuts.multispinnerfilter.MultiSpinnerListener;
 import com.androidbuts.multispinnerfilter.MultiSpinnerSearch;
 import com.androidbuts.multispinnerfilter.SingleSpinner;
 import com.androidbuts.multispinnerfilter.SingleSpinnerSearch;
@@ -71,15 +73,19 @@ public class MainActivity extends AppCompatActivity {
          *
          *  Using MultiSpinner class
          */
-        /*MultiSpinner simpleSpinner = (MultiSpinner) findViewById(R.id.simpleMultiSpinner);
+        MultiSpinner simpleSpinner = (MultiSpinner) findViewById(R.id.simpleMultiSpinner);
 
-        simpleSpinner.setItems(listArray0, -1, new MultiSpinnerListener() {
+        simpleSpinner.setItems(listArray0, -1, new SpinnerListener() {
 
             @Override
-            public void onItemsSelected(boolean[] selected) {
+            public void onItemsSelected(List<KeyPairBoolData> items) {
+                for (int i = 0; i < items.size(); i++) {
+                    if (items.get(i).isSelected()) {
+                        Log.i(TAG, i + " : " + items.get(i).getName() + " : " + items.get(i).isSelected());
+                    }
+                }
             }
-
-        });*/
+        });
 
         /**
          * Search MultiSelection Spinner (With Search/Filter Functionality)
