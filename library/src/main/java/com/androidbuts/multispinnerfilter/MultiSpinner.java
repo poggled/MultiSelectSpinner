@@ -69,6 +69,11 @@ public class MultiSpinner extends AppCompatSpinner implements OnCancelListener {
         super(arg0, arg1, arg2, arg3);
     }
 
+    public void resetSpinner()
+    {
+        selected = 0;
+    }
+
     public void setLimit(int limit, LimitExceedListener listener) {
         this.limit = limit;
         this.limitListener = listener;
