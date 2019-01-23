@@ -71,10 +71,11 @@ public class MultiSpinner extends AppCompatSpinner implements OnCancelListener {
 
     public void resetSpinner()
     {
-        selected = 0;
         for(KeyPairBoolData item : items){
             item.setSelected(false);
         }
+        spinnerTitle = "";
+        selected = 0;
     }
 
     public void setLimit(int limit, LimitExceedListener listener) {
